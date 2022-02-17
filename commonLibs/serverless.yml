@@ -1,0 +1,22 @@
+service: commonLibs-layerService
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+layers:
+  commonLibs:
+    path: ''
+    description: 'contains: aws-sdk@2.413.0, date-fns@2.14.0, lodash@4.17.11'
+    compatibleRuntimes:
+      - nodejs12.x
+
+# resources:
+#   Outputs:
+#     commonLibsLayerExport:
+#       Value:
+#         Ref: commonLibsLambdaLayer
+#       Export:
+#         Name: commonLibsLambdaLayer

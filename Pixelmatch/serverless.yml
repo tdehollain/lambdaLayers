@@ -1,0 +1,24 @@
+service: Pixelmatch-layerService
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+layers:
+  pixelmatch:
+    path: ''
+    compatibleRuntimes:
+      - nodejs12.x
+      - nodejs14.x
+    allowedAccounts:
+      - '*'
+
+resources:
+  Outputs:
+    PixelmatchLayerExport:
+      Value:
+        Ref: PixelmatchLambdaLayer
+      Export:
+        Name: PixelmatchLambdaLayer

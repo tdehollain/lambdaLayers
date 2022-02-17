@@ -1,0 +1,14 @@
+service: masterplanDataPackages-layerService
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+layers:
+  masterplanDataPackages:
+    path: ''
+    description: 'contains: fast-csv@4.3.0, promise-mysql@3.3.1'
+    compatibleRuntimes:
+      - nodejs12.x

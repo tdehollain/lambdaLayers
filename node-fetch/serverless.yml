@@ -1,0 +1,21 @@
+service: nodeFetch-layerService
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: eu-west-1
+
+layers:
+  nodeFetch:
+    path: ''
+    compatibleRuntimes:
+      - nodejs8.10
+
+resources:
+  Outputs:
+    NodeFetchLayerExport:
+      Value:
+        Ref: NodeFetchLambdaLayer
+      Export:
+        Name: NodeFetchLambdaLayer

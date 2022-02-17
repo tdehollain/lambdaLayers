@@ -1,0 +1,14 @@
+service: jwtPackages-layerService
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+layers:
+  jwtPackages:
+    path: ''
+    description: 'contains: fast-csv@4.3.0, jsonwebtoken@8.5.1, jwks-rsa@1.8.0'
+    compatibleRuntimes:
+      - nodejs12.x
